@@ -1,0 +1,42 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Reports generated locally
+reports/*.html
+
+# Local databases / data
+*.db
+*.sqlite
+*.sqlite3
+
+# ML artifacts generated locally
+*.pkl
+
+# Logs
+*.log
+*.egg-info/
