@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "AI-powered sales analytics agent using Claude, MCP, Python and PostgreSQL"
 requires-python = ">=3.11"
 dependencies = [
-    "mcp",
+    "mcp>=1.28,<2",
     "psycopg[binary]",
     "python-dotenv",
 ]
