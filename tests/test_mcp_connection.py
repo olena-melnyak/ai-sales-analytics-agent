@@ -1,5 +1,4 @@
 import asyncio
-import json
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
@@ -21,6 +20,26 @@ async def main():
 
             for tool in tools.tools:
                 print(f"- {tool.name}")
+
+            print("\nCalling execute_sql...")
+
+            sql_result = await session.call_tool(
+                "execute_sql",
+                {
+                    "query": """
+                        SELECT
+                            SUM(amount) AS total_revenue
+                        FROM sales
+                        WHERE status = 'completed';
+                    """
+                },
+            )
+
+            print("\nSQL result:")
+
+            for content in sql_result.content:
+                if hasattr(content, "text"):
+                    print(content.text)
 
             print("\nCalling create_report...")
 
